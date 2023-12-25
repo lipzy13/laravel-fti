@@ -64,46 +64,12 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($pegawai_dosen as $pega)
                     <tr>
-                      <th scope="row">1</th><td>Adi Arga Arifnur, M.Kom</td>
-                      <td>199208202019031005</td><td>PNS - Dosen Sistem Informasi</td>
+                      <th scope="row">{{ $loop->iteration }}</th><td>{{ $pega->nama }}</td>
+                      <td>{{ $pega->nip }}</td><td>{{ $pega->status->status }} - {{ $pega->role->nama }}</td>
                     </tr>
-                    <tr>
-                      <th scope="row">2</th><td>Hasdi Putra, MT</td>
-                      <td>198307272008121003</td><td>PNS - Dosen Sistem Informasi</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th><td>Afriyanti Dwi Kartika, MT</td>
-                      <td>198904212019032024</td><td>PNS - Dosen Sistem Informasi</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">4</th><td>Husnil Kamil, MT</td>
-                      <td>198201182008121002</td><td>PNS - Dosen Sistem Informasi</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">5</th><td>Aina Hubby Aziira, M.Eng</td>
-                      <td>199504302022032013</td><td>PNS - Dosen Sistem Informasi</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">6</th><td>Ir. Werman Kasoep, M.Kom</td>
-                      <td>195709071992031001</td><td>PNS - Dosen Teknik Komputer</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">7</th><td>Arrya Anandika, M.T</td>
-                      <td>199506232022031014</td><td>PNS - Dosen Teknik Komputer</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">8</th><td>Jefril Rahmadoni, M.Kom</td>
-                      <td>198904152019031009</td><td>PNS - Dosen Sistem Informasi</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">9</th><td>Derisma, MT</td>
-                      <td>198204192010122001</td><td>PNS - Dosen Teknik Komputer</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">10</th><td>Lathifah Arief, MT</td>
-                      <td>198109122014042001</td><td>PNS - Dosen Teknik Komputer</td>
-                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -126,45 +92,14 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th><td>Afdal</td>
-                      <td>196901072014091001</td><td>PNS - Tenaga Kependidikan</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th><td>Qadriasih Wina Putri, MM</td>
-                      <td>19880511201601163001</td><td>Honorer - Tenaga Kependidikan</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th><td>Derison</td>
-                      <td>19850808201501161001</td><td>Honorer - Tenaga Kependidikan</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">4</th><td>Resnia Vilda, A.Md</td>
-                      <td>19930709201602162001</td><td>Honorer - Tenaga Kependidikan</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">5</th><td>Dewi Herlina, A.Md</td>
-                      <td>197803222001122002</td><td>PNS - Tenaga Kependidikan</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">6</th><td>Riki Basra, A.Md</td>
-                      <td>197605142001121003</td><td>PNS - Tenaga Kependidikan</td>
-                    </tr>
+                  @foreach ($pegawai_non_dosen as $pega)
+                  <tr>
+                    <th scope="row">{{ $loop->iteration }}</th><td>{{ $pega->nama }}</td>
+                    <td>{{ $pega->nip }}</td><td>{{ $pega->status->status }} - {{ $pega->role->nama }}</td>
+                  </tr>
+                  @endforeach
                   </tbody>
                 </table>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-              data-bs-target="#collapseThree1" aria-expanded="false" aria-controls="collapseThree1">
-                Pimpinan
-              </button>
-            </h2>
-            <div id="collapseThree1" class="accordion-collapse collapse" data-bs-parent="#accordionExample1">
-              <div class="accordion-body">
-                  <img src="img/profil/pimpinan.jpeg" width="600px" class="mx-auto d-flex"/>
               </div>
             </div>
           </div>

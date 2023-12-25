@@ -1,4 +1,4 @@
-<footer class="py-5 bg-light mt-5 {{ in_array($title, ['INFORMASI', 'SENAT', 'DOWNLOAD', 'ALUMNI'])? 'fixed-bottom': '' }}">
+<footer class="py-5 bg-light mt-5 {{ in_array($title, ['INFORMASI', 'DOWNLOAD', 'ALUMNI'])? 'fixed-bottom': '' }}">
     <div class="container px-5">
         <div class="row">
           <div class="col">

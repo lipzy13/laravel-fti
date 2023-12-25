@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardPegawaiController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PegawaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +22,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/profil', function () {
-    return view('profil', [
-        "title" => "PROFIL"
-    ]);
-});
+Route::get('/profil', [PegawaiController::class, 'index']);
 
 Route::get('/akademik', function () {
     return view('akademik', [
@@ -90,3 +89,13 @@ Route::get('/alumni', function () {
         "title"=> "ALUMNI"
     ]);
 });
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/dashboard/pegawai', function () {
+    return view('dashboard.pegawai.index');
+})->middleware('auth');
+
+Route::resource('/dashboard/pegawai', DashboardPegawaiController::class)->middleware('auth');
