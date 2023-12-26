@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pegawai;
+use App\Models\Pimpinan;
 use App\Models\Role;
 use App\Models\Status;
 use Illuminate\Http\Request;
@@ -97,6 +98,7 @@ class DashboardPegawaiController extends Controller
     public function destroy(Pegawai $pegawai)
     {
         //
+        Pimpinan::where('pegawai_id', $pegawai->id)->update(['pegawai_id' => 0]);
         Pegawai::destroy($pegawai->id);
         return redirect('/dashboard/pegawai')->with('success', 'Data pegawai berhasil dihapus'); 
     }

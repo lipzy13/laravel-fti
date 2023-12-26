@@ -21,7 +21,7 @@
             <tbody>
             @foreach ($pegawai as $pega)
             <tr>
-              <th scope="row">{{ $pega->id }}</th><td>{{ $pega->nama }}</td>
+              <th scope="row">{{ $loop->iteration }}</th><td>{{ $pega->nama }}</td>
               <td>{{ $pega->nip }}</td>
               <td>{{ $pega->status->status }} - {{ $pega->role->nama }}</td>
               <td>

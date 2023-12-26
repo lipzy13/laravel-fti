@@ -20,4 +20,9 @@ class Pegawai extends Model
         return $this->belongsTo(Status::class);
     }
 
+    public function pimpinan()
+    {
+        return $this->hasone(Pimpinan::class);
+    }
+
 }

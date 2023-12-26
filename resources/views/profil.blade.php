@@ -67,7 +67,12 @@
                     @foreach ($pegawai_dosen as $pega)
                     <tr>
                       <th scope="row">{{ $loop->iteration }}</th><td>{{ $pega->nama }}</td>
-                      <td>{{ $pega->nip }}</td><td>{{ $pega->status->status }} - {{ $pega->role->nama }}</td>
+                      @if ($pega->nip == 0)
+                      <td>-</td>    
+                      @else
+                      <td>{{ $pega->nip }}</td>    
+                      @endif
+                      <td>{{ $pega->status->status }} - {{ $pega->role->nama }}</td>
                     </tr>
                     @endforeach
                   </tbody>
@@ -95,7 +100,12 @@
                   @foreach ($pegawai_non_dosen as $pega)
                   <tr>
                     <th scope="row">{{ $loop->iteration }}</th><td>{{ $pega->nama }}</td>
-                    <td>{{ $pega->nip }}</td><td>{{ $pega->status->status }} - {{ $pega->role->nama }}</td>
+                    @if ($pega->nip == 0)
+                    <td> - </td>    
+                    @else
+                    <td>{{ $pega->nip }}</td>
+                    @endif
+                    <td>{{ $pega->status->status }} - {{ $pega->role->nama }}</td>
                   </tr>
                   @endforeach
                   </tbody>

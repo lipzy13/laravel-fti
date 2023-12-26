@@ -21,7 +21,7 @@
     <main class="form-signin">
       <form action="/login" method="post">
         @csrf
-        <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
+        <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
     
         <div class="form-floating">
           <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="name@example.com" autofocus required 
@@ -37,7 +37,7 @@
           <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
           <label for="password ">Password</label>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+        <button class="w-100 btn btn-lg btn-success" type="submit">Login</button>
       </form>
     </main>
   </div>

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashboardPegawaiController;
+use App\Http\Controllers\DashboardPimpinanController;
+use App\Http\Controllers\PimpinanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
@@ -72,11 +74,8 @@ Route::get('/penjaminan-mutu', function () {
     ]);
 });
 
-Route::get('/senat', function () {
-    return view('senat', [
-        "title" => "SENAT"
-    ]);
-});
+
+Route::get('/senat', [PimpinanController::class, 'index']);
 
 Route::get('/zona-integritas', function () {
     return view('zona-integritas', [
@@ -98,4 +97,9 @@ Route::get('/dashboard/pegawai', function () {
     return view('dashboard.pegawai.index');
 })->middleware('auth');
 
+Route::get('/dashboard/pimpinan', [DashboardPimpinanController::class, 'index'
+])->middleware('auth');
+
+
+Route::resource('/dashboard/pimpinan', DashboardPimpinanController::class)->middleware('auth');
 Route::resource('/dashboard/pegawai', DashboardPegawaiController::class)->middleware('auth');
