@@ -100,6 +100,9 @@ Route::get('/dashboard/pegawai', function () {
 Route::get('/dashboard/pimpinan', [DashboardPimpinanController::class, 'index'
 ])->middleware('auth');
 
+Route::get('/dashboard', function() {
+    return redirect('/dashboard/pegawai');
+});
 
 Route::resource('/dashboard/pimpinan', DashboardPimpinanController::class)->middleware('auth');
 Route::resource('/dashboard/pegawai', DashboardPegawaiController::class)->middleware('auth');
